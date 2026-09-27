@@ -18,6 +18,6 @@ If you want the title but you don't have this mod, than just install it.
 
 This mod has been forked from the mod [NoMoreGrayFilter](https://github.com/petitfrapo/NoMoreGrayFilter) by [petitfrapo](https://github.com/petitfrapo). That means some of his code has been taken and puted in this mod.
 
-## Spécial Thanks
+## Special Thanks
 
 Special Thanks to my friend [DarkAngelGDYT](https://gdbrowser.com/u/DarkAngelGDYT) for playtesting the mod for me, adding files and more!
