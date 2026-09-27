@@ -16,7 +16,7 @@ If you want the title but you don't have this mod, than just install it.
 
 ## Forked
 
-This mod has been forked from the mod [NoMoreGrayFilter](https://github.com/petitfrapo/NoMoreGrayFilter) by [petitfrapo](https://github.com/petitfrapo). That means some of his code has been taken and puted in this mod.
+This mod has been forked from the mod [NoMoreGrayFilter](https://geode-sdk.org/mods/petitfrapo.nomoregrayfilter) by [PetitFrapo](https://github.com/petitfrapo). That means some of his code has been taken and puted in this mod.
 
 ## Special Thanks
 
