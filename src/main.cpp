@@ -54,22 +54,6 @@ class $modify(CreatorLayer) {
 class $modify(LevelBrowserLayer) {
     bool init(GJSearchObject* search) {
         if (!LevelBrowserLayer::init(search)) return false;
-
-        if (search && search->m_searchType == SearchType::HallOfFame) {
-            if (auto label = this->getChildByType<CCLabelBMFont>(0))
-                label->setVisible(false);
-
-            if (auto list = this->m_list) {
-                for (auto child : CCArrayExt<CCNode*>(list->getChildren())) {
-                    if (typeinfo_cast<CCLabelBMFont*>(child) ||
-                        typeinfo_cast<CCSprite*>(child) ||
-                        typeinfo_cast<CCScale9Sprite*>(child) ||
-                        typeinfo_cast<CCLayerColor*>(child)) {
-                        child->setVisible(false);
-                    }
-                }
-            }
-        }
         return true;
     }
 };
