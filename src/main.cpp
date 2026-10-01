@@ -24,6 +24,10 @@ class $modify(CreatorLayer) {
             sprMapPacks = CCSprite::create("HallOfFame.png"_spr);
         }
 
+        std::map<std::string, CCSprite*> idsToBtns = {
+            { "map-packs-button", sprMapPacks },
+        };
+
         for (auto& pair : idsToBtns) {
             auto id = pair.first.c_str();
             auto superExpertLoaded = (strcmp("map-packs-button", id) == 0) && Loader::get()->isModLoaded("xanii.super_expert");
