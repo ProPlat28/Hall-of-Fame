@@ -64,7 +64,8 @@ class $modify(CreatorLayer) {
     CCDirector::get()->pushScene(
         CCTransitionFade::create(0.5f, LevelBrowserLayer::scene(search))
     );
-}
+  }
+};
 
 class $modify(LevelBrowserLayer) {
     bool init(GJSearchObject* search) {
