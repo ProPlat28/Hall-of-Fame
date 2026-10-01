@@ -64,12 +64,42 @@ class $modify(CreatorLayer) {
     CCDirector::get()->pushScene(
         CCTransitionFade::create(0.5f, LevelBrowserLayer::scene(search))
     );
-  }
-};
+}
 
 class $modify(LevelBrowserLayer) {
+    static void onModify(auto& self) {
+        (void) self.setHookPriority("LevelBrowserLayer::init", Priority::Late);
+    }
+
     bool init(GJSearchObject* search) {
         if (!LevelBrowserLayer::init(search)) return false;
+
+        if (search && search->m_searchType == SearchType::Bonus) {
+            if (auto bi = this->getChildByID("header-sprite"))
+                bi->setVisible(false);
+
+            if (auto label = this->getChildByType<CCLabelBMFont>(0))
+                label->setVisible(false);
+
+            if (auto list = this->m_list) {
+                if (auto title = list->getChildByType<CCLabelBMFont>(0))
+                    title->setVisible(false);
+
+                for (auto child : CCArrayExt<CCNode*>(list->getChildren())) {
+                    if (auto spr = typeinfo_cast<CCSprite*>(child)) {
+                        auto tex = spr->getTexture();
+                        if (!tex || tex->getContentSize().width <= 1.f)
+                            spr->setVisible(false);
+                    }
+                }
+            }
+
+            if (auto title = CCSprite::create("BonusTitle.png"_spr)) {
+                auto winSize = CCDirector::get()->getWinSize();
+                title->setPosition({winSize.width / 2.f, winSize.height - 25.f});
+                this->addChild(title, 100);
+            }
+        }
         return true;
     }
 };
