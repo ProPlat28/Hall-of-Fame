@@ -24,5 +24,17 @@
     "sprites": [
       "resources/*.png"
     ]
+  },
+  "settings": {
+    "button-type": {
+      "type": "string",
+      "name": "Button",
+      "default": "Hall Of Fame",
+      "one-of": [
+        "Hall Of Fame",
+        "Bonus"
+      ],
+      "description": "Choose what button replaces the Map Packs"
+    }
   }
 }
