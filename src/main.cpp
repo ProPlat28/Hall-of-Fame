@@ -43,9 +43,7 @@ class $modify(CreatorLayer) {
 
             pair.second->setScale(existingSprite->getScale());
 
-            if (!superExpertLoaded) {
-                btn->setNormalImage(pair.second);
-            }
+            btn->setNormalImage(pair.second);
 
             btn->setContentSize(contentSize);
         }
