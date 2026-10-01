@@ -17,6 +17,8 @@ class $modify(CreatorLayer) {
         auto buttonType = Mod::get()->getSettingValue<std::string>("button-type");
 
         CCSprite* sprMapPacks = nullptr;
+
+        if (buttonType == "Bonus") {
             sprMapPacks = CCSprite::create("Bonus.png"_spr);
         } else {
             sprMapPacks = CCSprite::create("HallOfFame.png"_spr);
