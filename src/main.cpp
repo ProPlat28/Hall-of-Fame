@@ -17,10 +17,6 @@ class $modify(CreatorLayer) {
         auto buttonType = Mod::get()->getSettingValue<std::string>("button-type");
 
         CCSprite* sprMapPacks = nullptr;
-        if (buttonType == "Bonus") {
-            CCTextureCache::sharedTextureCache()->addImage(
-                (Mod::get()->getResourcesDir() / "Bonus.png").string().c_str()
-            );
             sprMapPacks = CCSprite::create("Bonus.png"_spr);
         } else {
             sprMapPacks = CCSprite::create("HallOfFame.png"_spr);
@@ -41,10 +37,9 @@ class $modify(CreatorLayer) {
 
             pair.second->setScale(existingSprite->getScale());
 
-            btn->setNormalImage(pair.second);
-
+            btn->setSprite(pair.second);
+            
             btn->setContentSize(contentSize);
-        }
 
         return true;
     }
