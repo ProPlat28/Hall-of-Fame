@@ -17,16 +17,16 @@ class $modify(CreatorLayer) {
         auto buttonType = Mod::get()->getSettingValue<std::string>("button-type");
 
         CCSprite* sprMapPacks = nullptr;
-
         if (buttonType == "Bonus") {
             sprMapPacks = CCSprite::create("Bonus.png"_spr);
         } else {
             sprMapPacks = CCSprite::create("HallOfFame.png"_spr);
         }
-
+        if (!sprMapPacks) return true;
+        
         std::map<std::string, CCSprite*> idsToBtns = {
-            { "map-packs-button", sprMapPacks },
-        };
+        { "map-packs-button", sprMapPacks },
+            };
 
         for (auto& pair : idsToBtns) {
             auto id = pair.first.c_str();
@@ -43,10 +43,12 @@ class $modify(CreatorLayer) {
 
             pair.second->setScale(existingSprite->getScale());
 
-            btn->setNormalImage(pair.second);
-            btn->updateSprite();
-            
+            if (!superExpertLoaded) {
+                btn->setNormalImage(pair.second);
+            }
+
             btn->setContentSize(contentSize);
+        }
 
         return true;
     }
@@ -62,8 +64,7 @@ class $modify(CreatorLayer) {
     CCDirector::get()->pushScene(
         CCTransitionFade::create(0.5f, LevelBrowserLayer::scene(search))
     );
-  }
-};
+}
 
 class $modify(LevelBrowserLayer) {
     bool init(GJSearchObject* search) {
