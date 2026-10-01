@@ -18,15 +18,13 @@ class $modify(CreatorLayer) {
 
         CCSprite* sprMapPacks = nullptr;
         if (buttonType == "Bonus") {
+            CCTextureCache::sharedTextureCache()->addImage(
+                (Mod::get()->getResourcesDir() / "Bonus.png").string().c_str()
+            );
             sprMapPacks = CCSprite::create("Bonus.png"_spr);
         } else {
             sprMapPacks = CCSprite::create("HallOfFame.png"_spr);
         }
-        if (!sprMapPacks) return true;
-
-        std::map<std::string, CCSprite*> idsToBtns = {
-            { "map-packs-button", sprMapPacks },
-        };
 
         for (auto& pair : idsToBtns) {
             auto id = pair.first.c_str();
