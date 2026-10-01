@@ -11,7 +11,7 @@ Also the button will be on Creator layer like it was in 2.1 and not on the Bette
 
 ## BetterInfo
 
-For showing the "Hall of Fame" title, [BetterInfo](https://geode-sdk.org/mods/cvolton.betterinfo) will be required for it. But BetterInfo is not really required for the mod and it will not cause bugs if you don't have it. Just the "Hall of Fame" title will not be shown, so that's not an dependencie.
+For showing the "Hall of Fame" and "Bonus Levels" title, [BetterInfo](https://geode-sdk.org/mods/cvolton.betterinfo) will be required for it. But BetterInfo is not really required for the mod and it will not cause bugs if you don't have it. Just the "Hall of Fame" title will not be shown, so that's not an dependencie.
 If you want the title but you don't have this mod, than just install it.
 
 ## Forked
